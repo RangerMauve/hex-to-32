@@ -1,0 +1,26 @@
+{
+  "name": "hex-to-32",
+  "version": "1.0.0",
+  "description": "Convert a hex string to base32 and back",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RangerMauve/hex-to-32.git"
+  },
+  "keywords": [
+    "hex",
+    "base32"
+  ],
+  "author": "rangermauve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RangerMauve/hex-to-32/issues"
+  },
+  "homepage": "https://github.com/RangerMauve/hex-to-32#readme",
+  "dependencies": {
+    "base32": "0.0.6"
+  }
+}
