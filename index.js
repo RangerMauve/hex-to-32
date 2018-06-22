@@ -14,8 +14,8 @@ function encode(hexString) {
 	var bytes = Buffer.from(hexString, "hex");
 	var encoded = base32.stringify(bytes);
 
-	// strip padding
-	return encoded.replace(/(=+)$/, '');
+	// strip padding & lowercase
+	return encoded.replace(/(=+)$/, '').toLowerCase();
 }
 
 /**

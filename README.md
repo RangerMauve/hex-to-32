@@ -13,7 +13,7 @@ var hex = value.toString(16);
 
 var encoded = hexTo32.encode(hex);
 
-assert.equal(encoded, "32W2K");
+assert.equal(encoded, "32w2k");
 
 var decoded = hexTo32.decode(encoded);
 
