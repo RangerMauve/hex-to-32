@@ -1,7 +1,6 @@
 # hex-to-32
-Convert a hex string to base32 and back.
 
-Uses [this](https://github.com/agnoster/base32-js) human-friendly base32 implementation.
+Convert a hex string to base32 and back using [`rfc4648`](https://www.npmjs.com/package/rfc4648).
 
 ```
 npm install --save hex-to-32
@@ -14,7 +13,7 @@ var hex = value.toString(16);
 
 var encoded = hexTo32.encode(hex);
 
-assert.equal(encoded, "vupua");
+assert.equal(encoded, "32W2K");
 
 var decoded = hexTo32.decode(encoded);
 
