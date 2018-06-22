@@ -1,4 +1,4 @@
-var base32 = require("base32");
+var { base32 } = require('rfc4648')
 
 module.exports = {
 	encode: encode,
@@ -12,8 +12,10 @@ module.exports = {
 function encode(hexString) {
 	// Convert to array of bytes
 	var bytes = Buffer.from(hexString, "hex");
+	var encoded = base32.stringify(bytes);
 
-	return base32.encode(bytes);
+	// strip padding & lowercase
+	return encoded.replace(/(=+)$/, '').toLowerCase();
 }
 
 /**
@@ -21,11 +23,11 @@ function encode(hexString) {
  * @param {String} base32String The base32 encoded string
  */
 function decode(base32String) {
-	// Decode to ascii text
-	var ascii = base32.decode(base32String);
-
-	// Convert to array of bytes
-	var bytes = Buffer.from(ascii, "ascii");
+	// Decode to Buffer
+	var bytes = base32.parse(base32String, {
+		out: Buffer.alloc,
+		loose: true
+	});
 
 	return bytes.toString("hex");
 }
